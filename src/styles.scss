@@ -96,6 +96,13 @@ main {
           text-decoration: underline;
         }
       }
+
+      .no_information {
+        
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }

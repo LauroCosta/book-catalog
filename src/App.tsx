@@ -30,14 +30,15 @@ function App() {
     const { data } = await api.get<DataProps>(`search?query=${searchKey}`);
 
     const hits = data.hits.map((hit) => {
-      return {
-        title: hit.title,
-        url: hit.url,
-        author: hit.author,
-        objectID: hit.objectID,
-        created_at: hit.created_at
-      };
+        return {
+          title: hit.title,
+          url: hit.url,
+          author: hit.author,
+          objectID: hit.objectID,
+          created_at: hit.created_at
+        };
     });
+
     setHits(hits);
   }
 
@@ -71,12 +72,12 @@ function App() {
 
             <div title={hit.title}>
               <FiBook width={70} size={20} color={"#767676"}/>
-              <h1>{hit.title}</h1>
+              <h1>{hit.title ? hit.title : "Não informado"}</h1>
             </div>
             
             <div title={hit.url}>
               <FiLink width={80} size={20} color={"#767676"}/>
-              <a href={hit.url}>{hit.url}</a>
+              <a className={hit.url ? "" : "no_information"} href={hit.url}>{hit.url ? hit.title : "Não informado"}</a>
             </div>
           </div>
         );
