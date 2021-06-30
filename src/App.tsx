@@ -77,7 +77,7 @@ function App() {
             
             <div title={hit.url}>
               <FiLink width={80} size={20} color={"#767676"}/>
-              <a className={hit.url ? "" : "no_information"} href={hit.url}>{hit.url ? hit.title : "Não informado"}</a>
+              <a className={hit.url ? "" : "no_information"} href={hit.url}>{hit.url ? hit.url : "Não informado"}</a>
             </div>
           </div>
         );
